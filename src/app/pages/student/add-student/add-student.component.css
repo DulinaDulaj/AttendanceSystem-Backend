@@ -1,0 +1,30 @@
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .photo-preview {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .photo-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  .photo-preview i {
+    font-size: 3rem;
+    color: #6c757d;
+  }
+  .page-title {
+    color: #1e3c72;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }

@@ -1,0 +1,34 @@
+.form-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .form-label {
+    font-weight: 500;
+    color: #1e3c72;
+  }
+  .required-field::after {
+    content: "*";
+    color: red;
+    margin-left: 4px;
+  }
+  .back-button {
+    margin-bottom: 20px;
+    color: #1e3c72;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+  .back-button:hover {
+    color: #2a5298;
+  }
+  .back-button i {
+    margin-right: 5px;
+  }
+  .page-title {
+    color: #1e3c72;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }

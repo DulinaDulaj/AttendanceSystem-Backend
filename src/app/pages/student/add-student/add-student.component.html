@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="form-container">
+    
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="page-title">Add New Student</h2>
+      </div>
+  
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <form id="addStudentForm" class="needs-validation" novalidate>
+            <div class="row g-4">
+        
+  
+              <div class="col-md-6">
+                <label class="form-label">Name*</label>
+                <input type="text" class="form-control"[(ngModel)]="student.name" [ngModelOptions]="{standalone: true}" required>
+              
+              </div>
+  
+              <div class="col-md-6">
+                <label class="form-label">NIC Number*</label>
+                <input type="text"  class="form-control" [(ngModel)]="student.nic" [ngModelOptions]="{standalone: true}" required>
+                
+              </div>
+  
+              <div class="col-md-6">
+                <label class="form-label">Email*</label>
+                <input type="email" class="form-control" [(ngModel)]="student.email" [ngModelOptions]="{standalone: true}" required>
+                
+              </div>
+  
+              <div class="col-md-6">
+                <label class="form-label">Phone Number*</label>
+                <input type="tel" class="form-control" [(ngModel)]="student.phone" [ngModelOptions]="{standalone: true}" required>
+              </div>
+  
+              <div class="col-md-6">
+                <label class="form-label">Age*</label>
+                <input type="number" class="form-control" min="15" max="100" [(ngModel)]="student.age" [ngModelOptions]="{standalone: true}" required>
+                
+              </div>
+  
+              
+              <div class="col-12 text-end mt-4">
+                <button type="submit" class="btn btn-primary" (click)="addStudent()">
+                  <i class="bi bi-person-plus me-2"></i>Add Student
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
