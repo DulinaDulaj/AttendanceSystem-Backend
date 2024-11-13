@@ -12,25 +12,25 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./add-student.component.css']
 })
 export class AddStudentComponent {
-  public student:any={
-    nic:"",
-    name:"",
-    phone:"",
-    email:"",
-    age:""
+  public student: any = {
+    nic: "",
+    name: "",
+    phone: "",
+    email: "",
+    age: ""
   };
-  
-  constructor(private http:HttpClient){}
 
-  public addStudent(){
-    this.http.post("http://localhost:8080/student",this.student).subscribe((data)=>{
-        alert("student Added!!!!");
-        this.student.name="";
-        this.student.nic="";
-        this.student.phone="";
-        this.student.email="";
-        this.student.age="";
+  constructor(private http: HttpClient) { }
+
+  public addStudent() {
+    this.http.post("http://localhost:8080/student", this.student).subscribe((data) => {
+      alert("student Added!!!!");
+      this.student.name = "";
+      this.student.nic = "";
+      this.student.phone = "";
+      this.student.email = "";
+      this.student.age = "";
     })
   }
- 
+
 }

@@ -5,50 +5,66 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="studentId" class="form-label">Student ID</label>
-                        <input type="text" class="form-control" id="studentId" placeholder="Enter Student ID">
+                        <label for="studentId" class="form-label">Student NIC</label>
+                        <div>
+                            <input class="form-control" type="text" placeholder="Search by NIC"
+                                [formControl]="searchControl" [(ngModel)]="attendance.nic">
+                            <ul *ngIf="students.length > 0">
+                                <li *ngFor="let student of students" (click)="selectStudent(student); setName(student)"
+                                    class="student-item">
+                                    {{ student.name }} - {{ student.nic }}
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="courseName" class="form-label">Name</label>
+                        <input class="form-control" type="text" placeholder="Name" [(ngModel)]="attendance.name">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
                         <label for="courseName" class="form-label">Course</label>
-                        <select class="form-control" id="courseName">
+                        <select class="form-control" id="courseName" [(ngModel)]="attendance.course">
                             <option value="">Select Course</option>
-                            <option value="CS101">CS101 - Introduction to Programming</option>
-                            <option value="CS102">CS102 - Data Structures</option>
-                            <option value="CS103">CS103 - Database Management</option>
+                            <option [value]="course.c_name" *ngFor="let course of courses">
+                                {{course.c_name}}</option>
+
                         </select>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="mb-3">
-                        <label for="attendanceStatus" class="form-label">Status</label>
-                        <select class="form-control" id="attendanceStatus">
-                            <option value="present">Present</option>
-                            <option value="absent">Absent</option>
-                        </select>
+                        <label for="attendanceStatus" class="form-label">Date</label>
+                        <input type="date" class="form-control" [(ngModel)]="attendance.date">
                     </div>
                 </div>
             </div>
-            <button class="btn btn-mark text-white" onclick="markAttendance()">
+            <button class="btn btn-mark text-white" (click)="addAttendance()">
                 <i class="bi bi-check-circle"></i> Mark Attendance
             </button>
         </div>
-
 
         <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Student ID</th>
+                        <th>Student NIC</th>
                         <th>Student Name</th>
                         <th>Course</th>
-                        <th>Status</th>
                         <th>Date</th>
                     </tr>
                 </thead>
                 <tbody id="attendanceTableBody">
-
+                    <tr *ngFor="let att of tempAttendance; index as i">
+                        <td>{{att.nic}}</td>
+                        <td>{{att.name}}</td>
+                        <td>{{att.course}}</td>
+                        <td>{{att.date}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

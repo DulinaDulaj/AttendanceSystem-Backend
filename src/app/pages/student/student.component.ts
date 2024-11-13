@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './student.component.css'
 })
 export class StudentComponent {
+
   title = 'individual-project';
 
   public tempstudentList: any = []; 
@@ -66,4 +67,5 @@ export class StudentComponent {
       alert("Student Deleted Successfully!!!")
     })
   }
+
 }

@@ -11,11 +11,11 @@
 
 <table class="course-table">
 
-  <tr>
+  <tr *ngFor="let course of courseList; index as i">
     <td>
-      <h2 class=""style="font-family: Arial, sans-serif;">Web Development</h2>
-      <p class="card-text">Course Code: WD101</p>
-      <p class="card-text">Students Enrolled: 45</p>
+      <h2 class=""style="font-family: Arial, sans-serif;">{{course.c_name}}</h2>
+      <p class="card-text">Course Code: {{course.c_code}}</p>
+      <p class="card-text">{{course.description}}</p>
       <button class="btn btn-sm btn-danger">
         <i class="bi bi-trash"></i>
       </button>
